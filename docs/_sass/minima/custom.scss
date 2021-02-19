@@ -1,0 +1,85 @@
+// * {
+//   box-sizing: border-box;
+// }
+
+.banner-image {
+  border-top: 1px solid $grey-color-dark;
+  border-bottom: 1px solid $grey-color-dark;
+  margin-bottom: 15px;
+  min-height: $spacing-unit * 10.865;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  background-image: url("/images/IMG_7520c.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+// Home page - Post items in list.
+.row {
+  position: relative;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 15px;
+  img {
+    display: block;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  // img {
+  //   position: absolute;
+  //   top: 0px;
+  //   right: 0px;
+  //   padding-right: 30px;
+  //   max-height: 100px;
+  // }
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-excerpt {
+  padding: $spacing-unit 0;
+  flex: 1;
+  font-size: $small-font-size;
+  color: black;
+}
+
+.post-excerpt:after {
+  content:"\000A";
+  white-space: pre;
+}
+
+.post-meta:after {
+  content:"\000A";
+  white-space: pre;
+}
+
+.post-header:after {
+  content:"\000A";
+  white-space: pre;
+}

@@ -12,4 +12,7 @@ gem install bundler
 
 # install all the dependencies in the Gemfile (creates Gemfile.lock)
 bundle install
+
+# run the server.
+bundle exec jekyll serve
 ```

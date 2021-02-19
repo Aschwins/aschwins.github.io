@@ -3,6 +3,11 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2021-01-28 18:25:21 +0100
 categories: jekyll update
+author: Aschwin Schilperoort
+excerpt: "Our first post is a great succes. We learned a lot along the way. It's always nice to say: Hello World! This time in Jekyll and Ruby."
+image: /images/IMG_4724.JPG
+preview_image: /images/hello_world.png
+tags: beginner howto
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
