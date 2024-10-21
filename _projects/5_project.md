@@ -8,4 +8,3 @@ category: fun
 ---
 
 https://game-of-amazons.org/onscreen
-
