@@ -230,6 +230,7 @@ sudo apt install bat
 ```bash
 brew install bat
 ```
+
 {% endtab %}
 
 {% endtabs %}
