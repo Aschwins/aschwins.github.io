@@ -13,9 +13,9 @@ tabs: true
 
 ## Introduction
 
-I get asked this question a lot at the office: "How do you get your terminal to drip like that?" I don't want my terminal to drip. I want it to be clean and dry. I want it to be a place where I can get work done.
+I get asked this question a lot at the office: "How do you get your terminal to look like that?". The goal of this blogpost is to answer that question. I will show you how to make your terminal drip with drip.
 
-If you hear yourself say a simple terminal with bash is all I need. I don't need fancy themes or custom fonts or animated backgrounds. I don't need my terminal to drip or sparkle or glow. I just need it to work. Then you don't appreciate the art of productivity. You also don't see the value in making tools pleasure you.
+If you hear yourself say a simple terminal with bash is all I need. I don't need fancy themes or custom fonts or animated backgrounds. I just need it to work. Then you don't appreciate the art of productivity. You also don't see the value in making tools pleasure you.
 
 If you want to hop on the drip train, please continue to read and implement the following steps.
 
@@ -149,22 +149,25 @@ Bash on steroids.
 
 To install Zsh on Ubuntu, run the following command:
 
+{% tabs os %}
+
+{% tab os linux %}
+
 ```bash
 sudo apt install zsh
 ```
 
-{::options parse_block_html="true" /}
+{% endtab %}
 
-<details>
-<summary markdown="span">MacOS</summary>
-To install Zsh on MacOS, run the following command:
+{% tab os MacOS %}
 
 ```bash
 brew install zsh
 ```
 
-</details>
-{::options parse_block_html="false" /}
+{% endtab %}
+
+{% endtabs %}
 
 Now we always want to use zsh over bash, so we set the default shell to zsh.
 
@@ -186,7 +189,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 <br/>
 
-### 4. Install ZSH plugins
+### 3. Install ZSH plugins
 
 The drip.
 
@@ -196,7 +199,7 @@ There are many great plugins for Zsh. Here are a few that I use:
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh. This suggests commands as you type based on your command history. Use tab to accept the suggestion.
 - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) - This plugin adds a feature where you can search your history by typing a substring of the command you are looking for and pressing the up and down arrow keys to cycle through the results.
 
-Since we are using Oh-My-Zsh, we can install these plugins by cloning them into the `~/.oh-my-zsh/custom/plugins` directory.
+Since we are using Oh-My-Zsh, we can install these plugins by cloning them into the `~/.oh-my-zsh/custom/plugins` directory and adding them to the plugins list in the `.zshrc` file.
 
 ```bash
 # install zsh-syntax-highlighting
@@ -211,7 +214,7 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 
 <br/>
 
-### 5. Install bat
+### 4. Install bat
 
 A cat clone with wings.
 
@@ -250,7 +253,7 @@ echo "source ~/.zsh_aliases" >> ~/.zshrc
 
 <br/>
 
-### 6. Change your .zshrc file
+### 5. Change your .zshrc file
 
 Customize your Zsh configuration.
 
