@@ -17,8 +17,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I’ve always had a passion for problem-solving and strategy. I studied Mathematics in Leiden, which laid the foundation for my analytical thinking and shaped the way I approach challenges. During my studies, I spent four years in door-to-door sales, where I developed resilience, communication skills, and a deep understanding of people. This experience taught me the value of persistence and adaptability.
+I’ve always enjoyed solving problems and thinking strategically. I studied Mathematics in Leiden, which built my analytical skills and shaped how I approach challenges. During my studies, I worked for four years in door-to-door sales, where I learned resilience, communication, and how to understand people. This experience taught me the value of persistence and adaptability.
 
-For the past seven years, I’ve been working in data, focusing on turning complex information into actionable insights. Currently, I’m part of a team at dsm-firmenich, where I specialize in experiment planning optimization within self-driving labs. My role allows me to combine cutting-edge technology with data-driven strategies to push innovation forward.
+For the past seven years, I’ve been working with data, focused on turning complex information into useful insights. I’m currently part of a team at dsm-firmenich, where I work on optimizing experiment planning in self-driving labs, combining technology and data science to support innovation.
 
-Outside of work, I have a variety of hobbies that keep me engaged and curious. I love playing chess, strumming the guitar, performing improv, and hitting the tennis court whenever I can. These activities help me stay creative and sharp, both in my personal and professional life.
+Outside of work, I stay active and curious through hobbies like chess, guitar, improv, and tennis. These activities keep me creative and sharp in both my personal and professional life.
