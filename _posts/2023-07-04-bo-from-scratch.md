@@ -10,8 +10,6 @@ giscus_comments: false
 related_posts: false
 ---
 
-To include a jupyter notebook in a post, you can use the following code:
-
 {% assign jupyter_path = 'assets/jupyter/bo1-BOFromScratch.ipynb' | relative_url %}
 {% capture notebook_exists %}{% file_exists assets/jupyter/blog.ipynb %}{% endcapture %}
 {% if notebook_exists == 'true' %}
