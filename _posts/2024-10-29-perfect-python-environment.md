@@ -15,7 +15,7 @@ tabs: true
 
 The perfect python environment is a subjective term. It depends on what you are working on. If you are working on data science, you might need jupyter lab. If you are working on web development, you might need Django. If you are working on a machine learning project, you might need PyTorch. But there are some tools that are universally useful. In this post, I will show you how to set up the perfect python environment for any project.
 
-We're going to revolve everything around a *python package*, because the code that we're writing should be structured, tested, and documented. Having a python package and living in a virtual environment, will be the best way to make our productivity thrive.
+We're going to revolve everything around a _python package_, because the code that we're writing should be structured, tested, and documented. Having a python package and living in a virtual environment, will be the best way to make our productivity thrive.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -67,7 +67,7 @@ mkdir mypackage
 cd mypackage
 ```
 
-Now `mypackage` is going to be awesome, and of course it's going to be python. If you're working with python, you're going to need a virtual environment, because there a bagilion versions of python available and you want to make sure you're using the right one. There are almost as many virtual environment handlers as there are versions of python. Historically we had pyenv, conda, virtualenv, poetry and more. But now we have a new kid on the block called `uv`. 
+Now `mypackage` is going to be awesome, and of course it's going to be python. If you're working with python, you're going to need a virtual environment, because there a bagilion versions of python available and you want to make sure you're using the right one. There are almost as many virtual environment handlers as there are versions of python. Historically we had pyenv, conda, virtualenv, poetry and more. But now we have a new kid on the block called `uv`.
 
 `uv` is developed by [astral-sh](https://github.com/astral-sh/uv), it's written in rust and it's blazing fast. The only risk of using `uv` is that the creators will figure out how great it is and they will start to charge us for it. You can install it with the following command:
 
@@ -79,7 +79,7 @@ source $HOME/.local/bin/env
 uv --version
 ```
 
-Now that we have `uv` we can create a virtual environment within our package directory. 
+Now that we have `uv` we can create a virtual environment within our package directory.
 
 ```bash
 uv venv  # creates a virtual environment in the .venv directory
@@ -117,3 +117,58 @@ python
 ```
 
 ### 2. VSCode
+
+Now that we have our package set up, we need an editor to write our code in. I recommend Visual Studio Code. You can install it by going to the [download page](https://code.visualstudio.com/download) and following the instructions.
+
+Once install we can run vscode from the terminal by running the following command:
+
+```bash
+exec $SHELL -l  # restarts the shell
+code .
+```
+
+This will open vscode in the current directory. Which is still our mypackage directory (hopefully).
+
+This tutorial is not about how to use vscode, but I will show you some extensions that I recommend you install.
+
+- Python
+- Git History / GitLens / Git Graph (pick your favorite)
+- Remote - SSH
+- vscode-icons
+- WSL (if you're on WSL)
+- Data Wrangler
+- Docker
+- Prettier
+- Rainbow CSV
+- Window Colors
+- SQLite Viewer
+- Github Copilot
+
+There is pretty much an extension for everything you want. If there isn't, you can always write your own.
+
+### 3. Copilot
+
+If you value your time, you should pay a measily $10 per month to save hours of debugging, suggesting code, writing docstrings, writing tests, and more. Copilot is a plugin for vscode that uses OpenAI's GPT-4o to help you write code. It's like having a pair programmer that never sleeps, never eats, and never complains. You can install it by going to the [copilot page](https://copilot.github.com) and following the instructions.
+
+Install it within you vscode to maximize productivity!
+
+### 4. Linting and Formatting
+
+Linting and formatting are important. It makes your code more readable and it helps you catch bugs before they become a problem. I recommend using [ruff](https://docs.astral.sh/ruff/).
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0" style="max-width: 300px; display:block; margin-left:auto; margin-right:auto">
+        {% include figure.liquid loading="eager" path="assets/img/ruff.jpg" class="img-fluid rounded" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    A different kind of ruff.
+</div>
+
+Ruff comes preinstalled with `uv`. You can run it by running the following command:
+
+```bash
+uvx ruff check . --fix
+uvx ruff format . 
+```
+
