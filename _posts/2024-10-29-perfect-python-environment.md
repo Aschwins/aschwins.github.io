@@ -42,12 +42,12 @@ If you are on Windows, use WSL. If you are on macOS, you can use the mac specifi
 ## TLDR
 
 - UV
-- VSCode
+- VS Code
 - Copilot
 - Linting formatting: RUFF
 - jupyter lab / ipython (for data science)
 - git
-- vscode debugger
+- VS Code debugger
 - dotenv
 - pytest
 - coverage
@@ -116,25 +116,36 @@ python
 >>> import mypackage
 ```
 
-### 2. VSCode
+We can import our package, but it doesn't have anything installed yet. Let create a module called `mymodule` and add a function called `my_awesome_function` that prints "Hello World!".
+
+```bash
+touch src/mypackage/mymodule.py
+
+echo "def my_awesome_function():
+    print('Hello World!')" > src/mypackage/mymodule.py
+```
+
+Now mypackage has a module called `mymodule` with a function called `my_awesome_function`.
+
+### 2. VS Code
 
 Now that we have our package set up, we need an editor to write our code in. I recommend Visual Studio Code. You can install it by going to the [download page](https://code.visualstudio.com/download) and following the instructions.
 
-Once install we can run vscode from the terminal by running the following command:
+Once install we can run VS Code from the terminal by running the following command:
 
 ```bash
 exec $SHELL -l  # restarts the shell
 code .
 ```
 
-This will open vscode in the current directory. Which is still our mypackage directory (hopefully).
+This will open VS Code in the current directory. Which is still our mypackage directory (hopefully).
 
-This tutorial is not about how to use vscode, but I will show you some extensions that I recommend you install.
+This tutorial is not about how to use VS Code, but I will show you some extensions that I recommend you install.
 
 - Python
 - Git History / GitLens / Git Graph (pick your favorite)
 - Remote - SSH
-- vscode-icons
+- VS Code-icons
 - WSL (if you're on WSL)
 - Data Wrangler
 - Docker
@@ -148,9 +159,9 @@ There is pretty much an extension for everything you want. If there isn't, you c
 
 ### 3. Copilot
 
-If you value your time, you should pay a measily $10 per month to save hours of debugging, suggesting code, writing docstrings, writing tests, and more. Copilot is a plugin for vscode that uses OpenAI's GPT-4o to help you write code. It's like having a pair programmer that never sleeps, never eats, and never complains. You can install it by going to the [copilot page](https://copilot.github.com) and following the instructions.
+If you value your time, you should pay a measily $10 per month to save hours of debugging, suggesting code, writing docstrings, writing tests, and more. Copilot is a plugin for VS Code that uses OpenAI's GPT-4o to help you write code. It's like having a pair programmer that never sleeps, never eats, and never complains. You can install it by going to the [copilot page](https://copilot.github.com) and following the instructions.
 
-Install it within you vscode to maximize productivity!
+Install it within you VS Code to maximize productivity!
 
 ### 4. Linting and Formatting
 
@@ -172,3 +183,37 @@ uvx ruff check . --fix
 uvx ruff format . 
 ```
 
+### 5. Jupyter Lab & ipython
+
+Notebooks are great for data science, but they have the tendency to get a bit cluttered. Also tracking them in source control can be a bit of a pain. The good part about mypackage is that you can import it in Jupyter Notebooks and use it as you would any other package. You can install Jupyter Lab by running the following commands:
+
+```bash
+# make sure you're in the virtual environment (.venv)
+uv pip install jupyterlab
+
+mkdir notebooks
+
+# start jupyter lab
+jupyter lab
+```
+
+It's good practice to keep your notebooks in a separate directory (`notebooks`) from your package. Another good practice is to keep your notebooks clean and to move classes and functions to a python module in your package. This way you can test your code and make sure it's working as expected. You can also use Copilot to help you write code, because that's not available in JupyterLab (yet). You can also run Jupyter Notebooks in VS Code. 
+
+Try running the following in a notebook:
+
+```python
+%load_ext autoreload
+%autoreload 2
+
+from mypackage.mymodule import my_awesome_function
+my_awesome_function()
+```
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/jupyterlab-mypackage.png" class="img-fluid rounded" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    Importing mypackage in Jupyter Lab
+</div>
