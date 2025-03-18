@@ -46,6 +46,7 @@ If you are on Windows, use WSL. If you are on macOS, you can use the mac specifi
 - Copilot
 - Linting formatting: RUFF
 - jupyter lab / ipython (for data science)
+- marimo
 - git
 - VS Code debugger
 - dotenv
@@ -217,3 +218,122 @@ my_awesome_function()
 <div class="caption">
     Importing mypackage in Jupyter Lab
 </div>
+
+
+### 6. Marimo
+
+Marimo is an open-source reactive notebook. It's the next generation of python notebooks. You can check it out [here](https://marimo.io/). What I love about marimo is that it's reactive. You can write code in one cell and use the output in another cell. It's like having a spreadsheet, but with python code.
+
+You can also configure UI elements to interact with your code. You can create sliders, buttons, and text fields to change the input of your code. You can create a GUI for your code, which is great for exploratory data analysis (EDA) and for creating a simple dashboard.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/video/marimo.gif" class="img-fluid rounded" zoomable=true %}
+    </div>
+</div>
+
+### 7. Git
+
+You should be using git. Period. 
+
+### 8. VS Code Debugger
+
+Now this is very usefull when developing python modules. If you have a script that you want to debug, you can use the VS Code debugger. You can set breakpoints, step through your code, and inspect variables. You can also use the debugger in Jupyter Notebooks.
+
+### 9. Dotenv
+
+Within your python development environment there are certain things you want to keep secret. Like API keys, passwords, and other sensitive information. You can use a `.env` file to store these secrets. You can use the `python-dotenv` package to load these secrets into your environment variables. You can install it by running the following command:
+
+```bash
+uv pip install python-dotenv
+```
+
+You can create a `.env` file in the root of your package directory and add your secrets to it. 
+
+```
+SECRET_KEY=youllneverguess
+```
+
+You can load these secrets into your environment variables by running the following command:
+
+```bash
+from dotenv import load_dotenv
+load_dotenv()
+
+import os
+print(os.getenv('SECRET_KEY'))
+```
+
+### 10. Pytest
+
+Code without tests is like a car without brakes. You can drive it, but you're going to crash. You can write tests for your code using the `pytest` package. You can install it by running the following command:
+
+```bash
+uv pip install pytest
+```
+
+You can write tests for your code by creating a `tests` directory in the root of your package directory. You can create a test file called `test_mymodule.py` and write tests for your code. You can run the tests by running the following command:
+
+```python
+def test_my_awesome_function():
+    assert my_awesome_function() == 'Hello World!'
+```
+
+```bash
+pytest
+```
+
+### 11. Coverage
+
+You can use the `coverage` package to check how much of your code is covered by your tests. You can install it by running the following command:
+
+```bash
+uv pip install coverage
+```
+
+You can run the coverage report by running the following command:
+
+```bash
+coverage run -m pytest
+coverage report
+```
+
+### 12. Sphinx
+
+You can use the `sphinx` package to generate documentation for your code. You can install it by running the following command:
+
+```bash
+uv pip install sphinx
+```
+
+You can generate the documentation by running the following command:
+
+```bash
+sphinx-quickstart
+```
+
+You can configure the documentation by answering the questions that are asked. You can generate the documentation by running the following command:
+
+```bash
+sphinx-build -b html docs docs/_build
+```
+
+You can view the documentation by opening the `docs/_build/index.html` file in your browser.
+
+### 13. Pre-commit
+
+You can use the `pre-commit` package to run checks on your code before you commit it. You can install it by running the following command:
+
+```bash
+uv pip install pre-commit
+```
+
+You can configure the checks by creating a `.pre-commit-config.yaml` file in the root of your package directory. You can add the checks that you want to run to this file. You can run the checks by running the following command:
+
+```bash
+pre-commit run --all-files
+```
+
+### Conclusion
+
+This is the perfect python environment. It's a bit of work to set up, but it's worth it. You can use this environment for any project that you're working on. It will make your code more structured, more tested, and more documented. It will make your productivity thrive. And that's what we all want, right?
