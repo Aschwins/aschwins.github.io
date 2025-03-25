@@ -181,7 +181,7 @@ Ruff comes preinstalled with `uv`. You can run it by running the following comma
 
 ```bash
 uvx ruff check . --fix
-uvx ruff format . 
+uvx ruff format .
 ```
 
 ### 5. Jupyter Lab & ipython
@@ -198,7 +198,7 @@ mkdir notebooks
 jupyter lab
 ```
 
-It's good practice to keep your notebooks in a separate directory (`notebooks`) from your package. Another good practice is to keep your notebooks clean and to move classes and functions to a python module in your package. This way you can test your code and make sure it's working as expected. You can also use Copilot to help you write code, because that's not available in JupyterLab (yet). You can also run Jupyter Notebooks in VS Code. 
+It's good practice to keep your notebooks in a separate directory (`notebooks`) from your package. Another good practice is to keep your notebooks clean and to move classes and functions to a python module in your package. This way you can test your code and make sure it's working as expected. You can also use Copilot to help you write code, because that's not available in JupyterLab (yet). You can also run Jupyter Notebooks in VS Code.
 
 Try running the following in a notebook:
 
@@ -219,7 +219,6 @@ my_awesome_function()
     Importing mypackage in Jupyter Lab
 </div>
 
-
 ### 6. Marimo
 
 Marimo is an open-source reactive notebook. It's the next generation of python notebooks. You can check it out [here](https://marimo.io/). What I love about marimo is that it's reactive. You can write code in one cell and use the output in another cell. It's like having a spreadsheet, but with python code.
@@ -234,11 +233,13 @@ You can also configure UI elements to interact with your code. You can create sl
 
 ### 7. Git
 
-You should be using git. Period. 
+You should be using git. Period.
 
 ### 8. VS Code Debugger
 
 Now this is very usefull when developing python modules. If you have a script that you want to debug, you can use the VS Code debugger. You can set breakpoints, step through your code, and inspect variables. You can also use the debugger in Jupyter Notebooks.
+
+Set breakpoints in your scripts, so you are able to see the exact status of all your variables at that point in your code. You can then use the DEBUG CONSOLE to run parts of your code to find the error.
 
 ### 9. Dotenv
 
@@ -248,7 +249,7 @@ Within your python development environment there are certain things you want to 
 uv pip install python-dotenv
 ```
 
-You can create a `.env` file in the root of your package directory and add your secrets to it. 
+You can create a `.env` file in the root of your package directory and add your secrets to it.
 
 ```
 SECRET_KEY=youllneverguess
@@ -283,9 +284,33 @@ def test_my_awesome_function():
 pytest
 ```
 
-### 11. Coverage
+### 11. Pyright
 
-You can use the `coverage` package to check how much of your code is covered by your tests. You can install it by running the following command:
+Pyright is a fast type checker for Python, developed by Microsoft.
+
+- Static type checker → Catches type errors without running code.
+- Works with Type Hints → Uses Python's `typing` module.
+- Faster than mypy → Built for speed and scalability.
+- VS Code support → Integrated with Pylance for real-time feedback.
+- CLI & Editor → Runs in terminal or as an extension.
+- Strict mode available → Enforces stronger type checking.
+- Use it to catch bugs early, improve code quality, and enforce type safety.
+
+Install it with
+
+```sh
+uv pip install pyright
+```
+
+Run it with
+
+```python
+pyright
+```
+
+### 12. Coverage
+
+The `coverage` Python package is a tool used to measure how much of your Python code is executed during testing. It helps identify untested parts of your codebase, ensuring better test coverage and improving software quality.
 
 ```bash
 uv pip install coverage
@@ -298,9 +323,11 @@ coverage run -m pytest
 coverage report
 ```
 
-### 12. Sphinx
+Using `coverage` regularly helps catch hidden bugs and ensures that your tests fully validate your code. It’s like a spellchecker for your testing—highlighting what you’ve missed and helping you write more reliable software.
 
-You can use the `sphinx` package to generate documentation for your code. You can install it by running the following command:
+### 13. Sphinx
+
+Sphinx is a Python documentation generator that allows developers to create well-structured, professional-looking documentation for their projects. It was originally developed for documenting Python itself but is now widely used across many open-source and commercial projects.
 
 ```bash
 uv pip install sphinx
@@ -320,19 +347,39 @@ sphinx-build -b html docs docs/_build
 
 You can view the documentation by opening the `docs/_build/index.html` file in your browser.
 
-### 13. Pre-commit
+### 14. Pre-commit
 
-You can use the `pre-commit` package to run checks on your code before you commit it. You can install it by running the following command:
+The `pre-commit` Python package is a framework for managing and running git pre-commit hooks. It allows developers to automate checks and fixes before committing code, ensuring better code quality and consistency across a team.
 
 ```bash
 uv pip install pre-commit
 ```
 
-You can configure the checks by creating a `.pre-commit-config.yaml` file in the root of your package directory. You can add the checks that you want to run to this file. You can run the checks by running the following command:
+You can configure the checks by creating a `.pre-commit-config.yaml` file in the root of your package directory. A good starting point is to use the `pre-commit-hooks` package, which provides a set of common hooks for linting and formatting code. Of course there are many more hooks available for different use cases. Some good hooks to check out would be `ruff`, `pyright`, `isort`, `prettier`.
+
+```yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0 # Use the latest stable version
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+```
+
+Install the hooks
+
+```bash
+pre-commit install
+```
+
+Run the hooks
 
 ```bash
 pre-commit run --all-files
 ```
+
+The hooks will also automatically run before each commit, ensuring that your code meets the defined standards.
 
 ### Conclusion
 
