@@ -1,8 +1,6 @@
 ---
 layout: cv
-permalink: /cv/
+permalink: /resume/
+nav: false
 title: CV
-nav: true
-nav_order: 5
-redirect: /files/cv_aschwin.pdf
 ---
